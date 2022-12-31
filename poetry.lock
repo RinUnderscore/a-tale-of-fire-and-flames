@@ -152,6 +152,17 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "firebase"
+version = "3.0.1"
+description = "Python interface to the Google's Firebase REST APIs"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+requests = "*"
+
+[[package]]
 name = "firebase-admin"
 version = "6.0.1"
 description = "Firebase Admin Python SDK"
@@ -898,7 +909,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.9"
-content-hash = "979184ddc75320aac1f7033bca3ca39bbe3a6fa28f0d33a0fb8156e17317b6ea"
+content-hash = "79fa565481f0c1daf06d4c5d01b04f2e1a09f6916331606689c5f73b8bd41753"
 
 [metadata.files]
 aiohttp = []
@@ -914,6 +925,7 @@ click = []
 colorama = []
 cryptography = []
 debugpy = []
+firebase = []
 firebase-admin = []
 flask = []
 frozenlist = []

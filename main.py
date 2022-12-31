@@ -3,12 +3,12 @@ import os, sys
 import time
 import firebase_admin
 from firebase_admin import credentials
+from firebase import firebase
 
 # Firebase Realtime Database Setup
 cred = credentials.Certificate("a-tale-of-fire-and-flames-firebase-adminsdk-kjo2l-978f1902e7.json")
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://a-tale-of-fire-and-flames-default-rtdb.firebaseio.com/'
-})
+firebase_admin.initialize_app(cred)
+firebase = firebase.FirebaseApplication("https://a-tale-of-fire-and-flames-default-rtdb.firebaseio.com/", None)
 
 # Load Item Charts
 def load_item_list():
@@ -19,6 +19,10 @@ def load_item_list():
 	list_itemlist = os.read(file_itemlist, 9999999)
 	print(list_itemlist)
 
+# Database Send
+data = os.open('data/character.json', os.O_RDONLY)
+data_send = firebase.post('/Users', data)
+	
 # Clear Command
 def clear():
 	if sys.platform == "linux" or sys.platform == "Linux":
