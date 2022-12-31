@@ -1,5 +1,16 @@
-import os, time, sys
+# Import Packages
+import os, sys
+import time
+import firebase_admin
+from firebase_admin import credentials
 
+# Firebase Realtime Database Setup
+cred = credentials.Certificate("a-tale-of-fire-and-flames-firebase-adminsdk-kjo2l-978f1902e7.json")
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://a-tale-of-fire-and-flames-default-rtdb.firebaseio.com/'
+})
+
+# Load Item Charts
 def load_item_list():
 	file_character = os.open('data/character.json', os.O_RDONLY)
 	list_character = os.read(file_character, 9999999)
@@ -8,12 +19,14 @@ def load_item_list():
 	list_itemlist = os.read(file_itemlist, 9999999)
 	print(list_itemlist)
 
+# Clear Command
 def clear():
 	if sys.platform == "linux" or sys.platform == "Linux":
 		os.system('clear')
 	else:
 		os.system('cls')	
 
+# Main Run Loop
 if __name__ == "__main__":
 	print('Welcome to: "A TALE OF FIRE AND FLAMES"\nAn text-based MMORPG game to engage in quests and collect items to achieve victory against mobs and other players! Will you be the best?')
 	time.sleep(3)
