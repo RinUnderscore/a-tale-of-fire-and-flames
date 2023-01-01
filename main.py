@@ -1,5 +1,5 @@
 # Toggle Dev Modes
-devmode = True
+devmode = False
 
 # Import Packages
 import os, sys
@@ -30,7 +30,11 @@ def dev_load_item_list():
 
 # Database Send
 if devmode == False:
+	data = open("data/character", "r")
+	data = data.readline()
+	data = data.strip()
 	data_send = firebase.post('/', data)
+	print(data)
 
 # Clear Command
 def clear():
