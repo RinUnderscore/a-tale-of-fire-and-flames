@@ -3,6 +3,9 @@
 
 # Update Log and News
 
+## Better Dev Update Cont. (v0.0.3b)
+- Fixed Flaw with Numeric Handle, instead injecting the: ```"_io.TextIOWrapper"``` which isn't what we were looking for exactly, but this does fix the base issue.
+
 ## News Update (v0.0.3a)
 - created NEWS.md to allow users to keepup with development and future updates!
 
