@@ -1,8 +1,26 @@
-# A Tale of Fire and Flames
+# 'a tale of fire and flames'
+"a tale of fire and flames" is an text based MMORPG where users experience a world of their imagination while interacting with other users and mobs. Earn money, fight mobs and collect rare items to become the best!
 
-# News and Update Talks
-Read about what the developer is up to here!
+# Update Log and News
 
-## Dec 31st 2022 (v0.0.3a)
+## Better Dev Update Cont. (v0.0.3b)
+- Fixed Flaw with Numeric Handle, instead injecting the: ```"_io.TextIOWrapper"``` which isn't what we were looking for exactly, but this does fix the base issue.
 
-Hello everyone! It's RinUnderscore here! Last day of the year, pretty exciting! I've finished up some work on the v0.0.3 update called: "Better Dev" Update. This really will be helpful when I add many stuff for local development before I finish up the servers and databasing (which is totally because I want to do things locally and not because I'm too lazy to figure out the databasing issues yet...) I've put an question on: stack overflow question but I'm not sure how long it is going to take. Tomorrow is the New Year, so only a few updates while I chill at the Airport. Hopefully I can fix some issues with the servers then. See you later!
+## News Update (v0.0.3a)
+- created NEWS.md to allow users to keepup with development and future updates!
+
+## Better Dev Update (v0.0.3)
+- devmode to make it easier to experience the "dev"-mode.
+
+## v0.0.2a
+- security patches with database
+- realtime database init
+
+## v0.0.2
+- setup firebase
+
+## v0.0.1
+- setup character.json
+- setup itemlist.json
+- setup main.py
+- setup README.md
