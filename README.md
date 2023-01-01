@@ -3,6 +3,9 @@
 
 # Update Log and News
 
+## News Update (v0.0.3a)
+- created NEWS.md to allow users to keepup with development and future updates!
+
 ## Better Dev Update (v0.0.3)
 - devmode to make it easier to experience the "dev"-mode.
 
