@@ -1,3 +1,6 @@
+# Toggle Dev Modes
+devmode = True
+
 # Import Packages
 import os, sys
 import time
@@ -6,9 +9,10 @@ from firebase_admin import credentials
 from firebase import firebase
 
 # Firebase Realtime Database Setup
-cred = credentials.Certificate("a-tale-of-fire-and-flames-firebase-adminsdk-kjo2l-978f1902e7.json")
-firebase_admin.initialize_app(cred)
-firebase = firebase.FirebaseApplication("https://a-tale-of-fire-and-flames-default-rtdb.firebaseio.com/", None)
+if devmode == False:
+	cred = credentials.Certificate("a-tale-of-fire-and-flames-firebase-adminsdk-kjo2l-978f1902e7.json")
+	firebase_admin.initialize_app(cred)
+	firebase = firebase.FirebaseApplication("https://a-tale-of-fire-and-flames-default-rtdb.firebaseio.com/", None)
 
 # Load Item Charts
 def load_item_list():
@@ -19,10 +23,15 @@ def load_item_list():
 	list_itemlist = os.read(file_itemlist, 9999999)
 	print(list_itemlist)
 
+def dev_load_item_list():
+	file_character = os.open('dev_data/dev_character.json', os.O_RDONLY)
+	list_character = os.read(file_character, 9999999)
+	print(list_character)
+
 # Database Send
-data = os.open('data/character.json', os.O_RDONLY)
-data_send = firebase.post('/Users', data)
-	
+if devmode == False:
+	data_send = firebase.post('/', data)
+
 # Clear Command
 def clear():
 	if sys.platform == "linux" or sys.platform == "Linux":
@@ -36,4 +45,6 @@ if __name__ == "__main__":
 	time.sleep(3)
 	clear()
 	time.sleep(1)
-	load_item_list()
+	if devmode == True:
+		load_item_list()
+		dev_load_item_list()

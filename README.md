@@ -3,6 +3,9 @@
 
 # Update Log and News
 
+## Better Dev Update (v0.0.3)
+- devmode to make it easier to experience the "dev"-mode.
+
 ## v0.0.2a
 - security patches with database
 - realtime database init
